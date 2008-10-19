@@ -23,6 +23,8 @@ function updateLastSentence() {
       }
     }
   );
+
+  setTimeout("updateLastSentence()", 10000);
 }
 
 function disableInput() {
@@ -117,7 +119,6 @@ $(document).ready(function() {
   $("#story-body").hide();
   $("#story-link").click(toggleStory);
 
-  setTimeout("updateLastSentence()", 10000);
   updateLastSentence();
 });
 
