@@ -1,10 +1,12 @@
-var SERVER_URL = "http://tachikoma.local/ajax/";
+var SERVER_URL = "/ajax/";
 
 function updateLastSentence() {
   $.getJSON(SERVER_URL + 'last', 
     function(data) {
       $("#post-num").html("#" + data.num + ": ");
       $("#post-text").html(data.text);
+
+      $("#post-text").data("num", data.num);
 
       $("#metadata").show();
 
@@ -48,10 +50,14 @@ function submitLine() {
   var input = $("#next-sentence").val();
   var userId = $.cookie("id");
 
-  $.post(SERVER_URL + "next", { text: input, user: userId }, updateLastSentence);
-  $("#next-sentence").html("");
+  var currSeq = $("#post-text").data("num");
 
-  return false;
+  $.post(SERVER_URL + "next", { text: input, user: userId, num: currSeq }, updateLastSentence);
+
+  $("#next-sentence").html("");
+  updateLastSentence();
+
+  return true;
 }
 
 function toggleStory() {

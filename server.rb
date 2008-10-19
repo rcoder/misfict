@@ -25,13 +25,19 @@ get '/ajax/last' do
 end
 
 post '/ajax/next' do
+  curr_sz = $history.size
+  seq = params[:num].to_i
+
   p = Post.new
-  p.text = CGI.escapeHTML(params[:text])
-  p.user = params[:user].gsub(/[^-.\w]/, '')
-  p.ts = Time.now
-  p.num = $history.size
-  $history << p
-  $history.save_data
+
+  if curr_sz == (seq + 1)
+    p.text = CGI.escapeHTML(params[:text])
+    p.user = params[:user].gsub(/[^-.\w]/, '')
+    p.ts = Time.now
+    p.num = curr_sz
+    $history << p
+    $history.save_data
+  end
 
   p.to_json
 end
