@@ -1,0 +1,20 @@
+README for misfict (MIcro-Serial-FICTion)
+=========================================
+
+Author: Lennon Day-Reynolds
+Website: http://rcoder.net/misfict
+
+This is a simple application designed to let you play the classic 
+"story time" party game on the web. Each person sees the last line
+written by someone else, and adds their own line to the story. 
+
+Each time you write a line, you must wait for someone else to write 
+one before you may contribute again. Furthermore, to read the entire 
+story, you give up the right to edit for an hour.
+
+No particular effort is made to enforce any strong security checks;
+the unique ID for each user is kept in an un-obfuscated cookie, and
+submitted values are not limited to a particular length. Responses
+are checked to insure they have the proper sequence ID, though, to
+prevent spamming + accidental re-posting.
+
