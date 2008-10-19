@@ -50,7 +50,7 @@ get '/ajax/story' do
   $history.to_a.to_json
 end
 
-get '/misfict.rss' do
+get '/feed/rss' do
   feed = RSS::Maker.make("2.0") do |rss|
     rss.channel.title = 'misfict'
     rss.channel.link = 'http://rcoder.net/misfict/'
