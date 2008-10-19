@@ -65,7 +65,7 @@ function toggleStory() {
   var storyElem = $("#story-body");
 
   if (storyElem.is(":visible")) {
-    $("#story-link-label").html("show");
+    $("#story-link-label").html("read");
     storyElem.hide();
     $("#page-body").show();
 
