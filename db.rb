@@ -23,7 +23,12 @@ class History
     end
   end
 
-  def_delegators :@data, :size, :empty?, :each, :append, :<<, :first, :last, :replace, :delete, :pop
+  def_delegators :@data, :[], :size, :empty?, :each, :append, :<<, :first, :last, :replace, :delete, :pop
+
+  def recent(count=20)
+    start = (count > size) ? 0 : (size - count)
+    self[start...size]
+  end
 
   def save_data
     open(@path, 'w') {|fh| YAML.dump(@data, fh) }
