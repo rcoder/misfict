@@ -55,7 +55,6 @@ function submitLine() {
   $.post(SERVER_URL + "next", { text: input, user: userId, num: currSeq }, updateLastSentence);
 
   $("#next-sentence").html("");
-  updateLastSentence();
 
   return true;
 }
@@ -113,16 +112,12 @@ $(document).ready(function() {
     $.cookie("id", $.cookie("id"), { expires: 30 });
   }
 
-  $("#input-form").submit(submitLine);
+  $("#input-form-submit").click(submitLine);
 
   $("#story-body").hide();
   $("#story-link").click(toggleStory);
 
   setTimeout("updateLastSentence()", 10000);
   updateLastSentence();
-
-  if ($.browser.safari) {
-    alert("Sorry Safari isn't working yet. You can read but not post. I'm working on it, promise! --rcoder");
-  }
 });
 
