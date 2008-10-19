@@ -120,5 +120,9 @@ $(document).ready(function() {
 
   setTimeout("updateLastSentence()", 10000);
   updateLastSentence();
+
+  if ($.browser.safari) {
+    alert("Sorry Safari isn't working yet. You can read but not post. I'm working on it, promise! --rcoder");
+  }
 });
 
