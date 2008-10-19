@@ -1,5 +1,6 @@
 require 'uri'
 require 'drb'
+require 'rss'
 
 require 'rubygems'
 require 'test/spec'
@@ -16,7 +17,7 @@ def post(uri, params)
 end
 
 DB_URI = "druby://localhost:8777"
-SERVER_URI = "http://localhost:4567/ajax/"
+SERVER_URI = "http://localhost:4568/ajax/"
 
 context "db server" do
   setup do
@@ -56,5 +57,12 @@ context "http server" do
       entry.should.be.an.instance_of(Hash)
       entry["text"].should.not.be.nil
     end
+  end
+
+  specify "should return a valid RSS feed" do
+    res = get("http://localhost:4568/misfict.rss")
+    rss = RSS::Parser.parse(res)
+    rss.channel.title.should.not.be.nil
+    rss.items.size.should.not == 0
   end
 end
