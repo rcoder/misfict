@@ -21,7 +21,8 @@ a:visited {
   text-align: center;
   width: 100%;
   margin: 0px;
-  border-bottom: 1px dotted #ddd;;
+  border-bottom: 1px dotted #ddd;
+  clear: both;
 }
 
 #page-footer {
@@ -29,6 +30,7 @@ a:visited {
   width: 100%;
   margin: 0px;
   border-top: 1px dotted #ddd;
+  clear: both;
 }
 
 #page-body {
@@ -72,6 +74,9 @@ p#metadata {
 
 #help-text {
   float: left;
+  width: 200px;
   background: #555;
   border: 1px dotted #ddd;
+  margin: 1em;
+  padding: 1em;
 }
