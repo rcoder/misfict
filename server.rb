@@ -55,8 +55,7 @@ get '/feed/rss' do
     rss.channel.title = 'misfict'
     rss.channel.link = 'http://rcoder.net/misfict/'
     rss.channel.description = 'micro.serial.fiction'
-    recent = $history.recent(11).reverse
-    recent.shift
+    recent = $history.recent(10).reverse
     recent.each do |entry|
       item = rss.items.new_item
       item.title = entry.text
