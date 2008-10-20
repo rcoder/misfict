@@ -60,6 +60,10 @@ p#metadata {
   font-weight: bold;
 }
 
+#post-num {
+  font-size: 24pt;
+}
+
 #story-body {
   padding-left: 20%;
   padding-right: 20%;

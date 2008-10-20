@@ -3,7 +3,7 @@ var SERVER_URL = "/ajax/";
 function updateLastSentence() {
   $.getJSON(SERVER_URL + 'last', 
     function(data) {
-      $("#post-num").html("#" + data.num + ": ");
+      $("#post-num").html(data.num + ". ");
       $("#post-text").html(data.text);
 
       $("#post-text").data("num", data.num);
