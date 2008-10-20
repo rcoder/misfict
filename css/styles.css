@@ -69,3 +69,9 @@ p#metadata {
   padding-bottom: 0.5em;
   line-height: 1.25em;
 }
+
+#help-text {
+  float: left;
+  background: #555;
+  border: 1px dotted #ddd;
+}
