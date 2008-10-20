@@ -21,7 +21,6 @@ a:visited {
   text-align: center;
   width: 100%;
   margin: 0px;
-  border-bottom: 1px dotted #ddd;
   clear: both;
 }
 
@@ -29,7 +28,6 @@ a:visited {
   text-align: center;
   width: 100%;
   margin: 0px;
-  border-top: 1px dotted #ddd;
   clear: both;
 }
 
@@ -73,10 +71,11 @@ p#metadata {
 }
 
 #help-text {
-  float: left;
+  float: right;
   width: 200px;
   background: #555;
-  border: 1px dotted #ddd;
+  border: 1px solid #ddd;
   margin: 1em;
   padding: 1em;
+  font-size: 9pt;
 }
