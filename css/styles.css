@@ -3,6 +3,7 @@ body {
   font-size: 10pt;
   background-color: #333;
   color: #ddd;
+  line-height: 2em;
 }
 
 a:link {
@@ -32,10 +33,14 @@ a:visited {
 }
 
 #page-body {
-  padding-left: 20%;
-  padding-right: 20%;
+  padding-left: 2em;
+  padding-right: 2em;
   background-color: #333;
   margin: 0px;
+}
+
+#input-form {
+  margin-left: 1em;
 }
 
 #input-form textarea {
@@ -48,6 +53,8 @@ a:visited {
 
 p#metadata {
   font-size: 9pt;
+  line-height: 1.25em;
+  padding-bottom: 0px;
 }
 
 #wait-msg {
@@ -58,6 +65,7 @@ p#metadata {
 #post-body {
   font-size: 18pt;
   font-weight: bold;
+  width: 900px;
 }
 
 #post-num {
@@ -82,4 +90,5 @@ p#metadata {
   margin: 1em;
   padding: 1em;
   font-size: 9pt;
+  line-height: 1.25em;
 }
