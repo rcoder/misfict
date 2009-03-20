@@ -12,6 +12,10 @@ require 'post'
 
 $history = DRbObject.new(nil, "druby://localhost:8777")
 
+def is_valid?(text)
+  word.size > 2 && !%(test foobar asdf).member?(text) && !text.strip.empty?
+end
+
 get '/ajax/last' do
   if $history.empty?
     init_post = Post.new
@@ -31,9 +35,10 @@ post '/ajax/next' do
   seq = params[:num].to_i
 
   p = Post.new
+  text = params[:text]
 
-  if curr_sz == (seq + 1)
-    p.text = CGI.escapeHTML(params[:text])
+  if curr_sz == (seq + 1) and is_valid?(text)
+    p.text = CGI.escapeHTML(text)
     p.user = params[:user].gsub(/[^-.\w]/, '')
     p.ts = Time.now
     p.num = curr_sz
